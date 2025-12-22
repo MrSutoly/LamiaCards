@@ -569,8 +569,8 @@ class Contador:
     def mais_um(n):
         return n + 1
 
-con1 = Contador()
-con1.inst()
+con1 = Contador() #cria um contador
+con1.inst() #chama o metodo inst
 
 print(Contador.inc())
 print(Contador.inc())
