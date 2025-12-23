@@ -68,7 +68,7 @@ print(len(nums)) #printa quantos indices tem na lista, no caso seria 4
 nums.append(5)
 nums.append(6)
 nums.append(7)
-#adicionamos o numero 3 mais 3 vezes na lista
+#adicionamos os numeros 5,6 e 7 na lista
 
 print(len(nums)) #printa quantos indices tem na lista, no caso seria 7
 
