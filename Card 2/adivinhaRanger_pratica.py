@@ -140,7 +140,7 @@ def advTemp(jogador):
 nome = input('Digite o nome do jogador: ') #pede o nome do jogador 
 usuario = Jogador(nome) #cadastra ele como jogador
 Rodando = True #define true pois o programa ta rodando
-
+i
 while Rodando:
     print('-----> MENU <-----')
     print('Escolha um modo de jogo!')
