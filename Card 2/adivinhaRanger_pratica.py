@@ -101,7 +101,7 @@ Temporadas = [Dino_Trovao, Tempestade_Ninja, Super_Patrulha_Delta, Forca_Mistica
 
 def mostraOpc(): 
     for i, temp in enumerate(Temporadas, start = 1): #um for pra adicionar o nome de cada temporada nas opcoes
-        print(f'{i} : {temp['Temporada']}', end = ', ')
+        print(f"{i} : {temp['Temporada']}")
 
 def buscaTemporadaAleatoria():
     return random.choice((Temporadas)) #usa a funcao importada random para escolher uma temporada aleatoriamente
@@ -113,11 +113,20 @@ def advMorfagem(jogador):
     print('A qual temporada pertence essa morfagem?') #faz a pergunta ao jogador
     print(morph) #mostra o refrao
     mostraOpc() #mostra todas as opcoes
-    resp = int(input()) #pega a resposta do jogador 
     
-    if Temporadas[resp - 1]['Temporada'] == temp['Temporada']: #compara a resposta dada pelo usuario e ve se esta certo, usando o nome 
+    try:
+        resp = int(input())  #converte a resposta pra int
+    except:
+        print('Digite apenas numeros') #caso o usuario digite algo que nao seja numero ele cai nesse print
+        return
+
+    if resp < 1 or resp > len(Temporadas):  #verifica se o numero digitado ta dentro das opcoes validas
+        print('Opcao invalida') #caso ele digite um numero maior ou menor ele cai nesse print
+        return
+
+    if Temporadas[resp - 1]['Temporada'] == temp['Temporada']: #compara a resposta do usuario com a resposta certa
         print('Acertou!, +1 Ponto')
-        jogador.ganhaPont() #chama a funcao pra add um ponto se ele acertar
+        jogador.ganhaPont()
     else:
         print('Errou!')
 
@@ -128,19 +137,31 @@ def advTemp(jogador):
     print('A qual temporada pertence este integrante?')
     print(inte)
     mostraOpc() #mesma coisa da funcao de cima, pede ao jogador que escreva sua resposta
-    resp = int(input())
     
-    
-    if Temporadas[resp - 1]['Temporada'] == temp['Temporada']: #compara a resposta igual a funcao anterior que ja expliquei, o -1 e pra corrigir o erro, pois a lista comeca do indice 0
+    try:
+        resp = int(input())  #e a mesma logica da funcao de cima que eu ja expliquei
+    except:
+        print('Digite apenas numeros')
+        return
+
+    if resp < 1 or resp > len(Temporadas):
+        print('Opcao invalida')
+        return
+
+    if Temporadas[resp - 1]['Temporada'] == temp['Temporada']:
         print('Acertou!, +1 Ponto')
         jogador.ganhaPont()
     else:
         print('Errou!')
 
-nome = input('Digite o nome do jogador: ') #pede o nome do jogador 
+nome = input('Digite o nome do jogador: ').strip() #pede o nome do jogador e o strip tira os enter vazios
+
+if nome == '':
+    nome = 'Jogador'
+    
 usuario = Jogador(nome) #cadastra ele como jogador
 Rodando = True #define true pois o programa ta rodando
-i
+
 while Rodando:
     print('-----> MENU <-----')
     print('Escolha um modo de jogo!')
@@ -148,8 +169,13 @@ while Rodando:
     print('2 Adivinhar pelo Integrante')
     print('0 - Sair') #builda todo o menu enquanto Rodando = True
 
-    opcao = input('') #pega a opcao que ele escrever
+    opcao = input('').strip() #pega a opcao que ele escrever e o strip tira os enter vazio
 
+    if opcao == '':
+        print('Digite uma opcao') #se ele deu enter num vazio ele cai nesse print
+        continue
+        
+    
     if opcao == '1': #verificacoes para escolher o jogo
         advMorfagem(usuario)
     elif opcao == '2':

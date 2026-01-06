@@ -1,0 +1,16 @@
+import pacote.sub.arquivo_aula
+import fundamentos.variaveis_aula
+import fundamentos.operadores_aula
+import fundamentos.controle_aula
+import fundamentos.listas_tuplas_conjuntos_aula
+import fundamentos.dicionario_aula
+
+import funcoes.funcoes_basicas_aula
+import funcoes.args_aula
+import funcoes.funcional_aula
+import funcoes.lambdas_aula
+import funcoes.map_reduce_aula
+
+import classes.classes_basico_aula
+import classes.herancas_aula
+import classes.membros_aula
