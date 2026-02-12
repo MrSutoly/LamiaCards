@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 with open('aula/home_aula.html', 'r') as html_file: #abre o arquivo em modo read
     content = html_file.read() #le o arquivo e guarda em content
     
-    soup = BeautifulSoup(content, 'lxml') #lxml da uma arrumada pra melhorar a leitura
-    courses_html_tags = soup.find_all('h5') #pega as tags h5
+    soup = BeautifulSoup(content, 'lxml') #lxml e o parser pra organizar o html
+    courses_html_tags = soup.find_all('h5') #pega todas as tags h5
     for course in courses_html_tags: #pra cada curso dentro da variavel ele printa
         print(course.text)
         
