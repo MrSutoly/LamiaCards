@@ -4,7 +4,7 @@ from airflow.models import DagBag
 
 dags_dirs = [ #lista de diretorios pras dags
                 '/usr/local/airflow/project_a', 
-                '/usr/local/airflow/project_b'
+                '/usr/local/airflow/project_b' #como eu copiei da aula e esse codigo nao funciona eu deixei o diretorio assim mesmo
             ]
 
 for dir in dags_dirs: #para cada diretorio na lista de diretorios
