@@ -1,0 +1,2 @@
+FROM ubuntu 
+RUN apt-get update && apt-get -y install vim #instala o vim e atualiza com update

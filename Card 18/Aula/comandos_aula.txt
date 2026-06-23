@@ -1,0 +1,29 @@
+LISTA DOS COMANDOS DE TERMINAL MAIS USADOS NAS AULAS
+
+docker container create --name teste -it alpine sh  #Cria um container com a imagem alpine
+
+docker container rm teste #RM remove o container 
+
+docker container ls #Lista os containers em execucao
+
+docker container ls -a #Lista os containers em execucao e os parados tambem
+
+docker container attach teste #entra via terminal no container pra executar comandos nele
+
+rm -r * #Remove tudo do diretorio, fez isso pra remover as pastas de um container
+
+docker container start --help #Faz iso pra ver os comando que da pra usar com o start
+
+docker container rename ceaf meu-alpine #pega pelo inicio do id "ceaf" e renomeia ele
+
+docker container exec teste cat /etc/hosts #executa o cat em um container
+
+docker container run -v /home/voraztitan/bkp/:/bkp --name teste-volume -it alpine sh #cria um container e mapea o volume no diretorio bkp
+
+docker image save -o nginx-allumy.tar nginx-allumy-img #salva a imagem que ja existe pra um .tar
+
+docker image ls #lista todas as imagens
+
+docker image build -t meu-ubuntu /home/voraztitan #builda uma imagem docker lendo o dockerfile
+
+docker image import teste-export.tar ubuntu-importado #importa o .tar pra criar uma imagem no meu pc

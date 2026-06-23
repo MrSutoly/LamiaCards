@@ -1,0 +1,30 @@
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica$ mkdir pratica_docker #crio a pasta
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica$ cd pratica_docker/ #entro
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ cat index.html #dou um cat no html criado e vejo o conteudo
+<h1>Taylor Swift</h1>
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ nano Dockerfile #crio o dockerfile aqui esta so dockerfile, eu renomeei dps
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ docker build -t pratica-nginx . #constroi uma imagem a partir do dockerfile
+[+] Building 0.4s (7/7) FINISHED                                                                                                                                                                    docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                                          0.0s
+ => => transferring dockerfile: 164B                                                                                                                                                                          0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                                                                                                               0.0s
+ => [internal] load .dockerignore                                                                                                                                                                             0.0s
+ => => transferring context: 2B                                                                                                                                                                               0.0s
+ => [internal] load build context                                                                                                                                                                             0.0s
+ => => transferring context: 118B                                                                                                                                                                             0.0s
+ => [1/2] FROM docker.io/library/nginx:latest@sha256:42f2d24ae18df9b5251d1cc45548085656d2335e9338fd150a24e415462d151f                                                                                         0.1s
+ => => resolve docker.io/library/nginx:latest@sha256:42f2d24ae18df9b5251d1cc45548085656d2335e9338fd150a24e415462d151f                                                                                         0.0s
+ => [2/2] COPY index.html /usr/share/nginx/html/index.html                                                                                                                                                    0.0s
+ => exporting to image                                                                                                                                                                                        0.1s
+ => => exporting layers                                                                                                                                                                                       0.0s
+ => => exporting manifest sha256:6490b2f43a591c9df803ce944fb665ddbaaca25dbc16a94fe4e1e78d95cad5fa                                                                                                             0.0s
+ => => exporting config sha256:16dd262eb41582f5b7bd37fe4cb8450a406df60f8825ee122e525f97f1d754e9                                                                                                               0.0s
+ => => exporting attestation manifest sha256:9ba3eab2b61ce466ee91804437cac91a4954982964b88a450fe7727bcdd58af4                                                                                                 0.0s
+ => => exporting manifest list sha256:a2081353d75292e5977227bfc5dffed0bc73c351ebdfe6fed90c52507b31a929                                                                                                        0.0s
+ => => naming to docker.io/library/pratica-nginx:latest                                                                                                                                                       0.0s
+ => => unpacking to docker.io/library/pratica-nginx:latest                                                                                                                                                    0.0s
+
+#rodei numa porta diferente pois na 8080 ja tinha outro container
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ docker run -d --name nginx-pratica -p 8081:80 pratica-nginx #inicio no http://localhost:8081/
+88fd5f6b3cdb719b94531ad05fc09ebcf25de3b7f7f4a1ae57cff5d7666afedf
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ 

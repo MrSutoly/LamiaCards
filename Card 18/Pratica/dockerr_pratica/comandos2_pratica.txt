@@ -1,0 +1,7 @@
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ docker run -d --name nginx-volume -p 8082:80 -v "$(pwd)/index.html:/usr/share/nginx/html/index.html:Z" nginx:latest #copia o index pra imagem nginx
+e1fe64789cba20f5cbbbf966983e499a3c1fff74cf37b8b23159557544609252
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ echo "<h1>The Beatles</h1>" > index.html #mudando o conteudo
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ cat index.html #vendo se mudou
+<h1>The Beatles</h1>
+voraztitan@fedora:~/Documentos/GitHub/LamiaCards/Card 18/Pratica/pratica_docker$ 
+
